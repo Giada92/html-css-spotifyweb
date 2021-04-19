@@ -1,0 +1,65 @@
+/* common */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* /common */
+
+/* Main */
+main {
+    display: flex;
+}
+
+/* Main - aside */
+aside {
+    width: 200px;
+    height: calc(100vh - 90px);
+    background-color: black;
+}
+
+/* Main - section */
+section {
+    width: calc(100% - 200px);
+    height: calc(100vh - 90px);
+    background-color: #141922;
+    overflow-y: auto;
+}
+
+/* Main - Section-top */
+.section_top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 200px);
+    height: 90px;    
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+footer {
+    height: 90px;
+    background-color: #282828;
+}
+
+
+/* Media */
+@media screen and (max-width: 767px) {
+    
+    aside {
+        width: 50px;
+    }
+
+    section {
+        width: calc(100% - 50px);
+    }
+
+    .section_top {
+        width: calc(100% - 50px);
+    }
+}
