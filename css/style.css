@@ -9,6 +9,11 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
 /* /common */
 
 /* Main */
@@ -52,6 +57,7 @@ aside {
 }
 
 .menu {
+    height: 100%;
     list-style: none;    
 }
 .menu li {
@@ -70,6 +76,11 @@ aside {
 .menu li:first-child,
 .menu li:first-child a {
     color: white;
+}
+
+.menu img {
+    height: 25px;
+    vertical-align: middle;
 }
 
 .menu i {
@@ -94,10 +105,14 @@ h5 {
 }
 
 .user {
+    height: 80px;
     margin: 0 15px;
+    display: inline-block;
 }
 
 .install {
+    height: 34px;
+    line-height: 34px;
     padding: 5px 0;
     border-bottom: 1px solid #676767;
     font-weight: bold;
@@ -105,12 +120,23 @@ h5 {
     color: #676767;
 }
 
-.profile {
-    margin-top: 10px;
+.install > span {
+    vertical-align: middle;
 }
 
-.profile i {
-    font-size: 20px;
+.install > img {
+    height: 20px;
+}
+
+.profile {
+    margin-top: 10px;
+    color: white;
+}
+
+.profile img {
+    height: 20px;
+    background-color: #808080;
+    border-radius: 50%;
 }
 
 .profile span {
@@ -133,13 +159,106 @@ section {
     top: 0;
     right: 0;
     width: calc(100% - 200px);
-    height: 90px;    
+    height: 90px;
+    line-height: 90px;
+    text-align: right;  
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.profile {
+.section_top > a {
+    vertical-align: middle;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 10px 30px;
+    margin-right: 10px;
+    border: 1px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.section_top > a:hover {
+    transform: scale(2, 3);
+}
+
+/* Main - Section-main-nav */
+.section_main {
+    padding: 90px 15px 0 15px;
+}
+
+.section_nav {    
+    margin: 20px 0;
+}
+
+.section_nav_menu {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section_nav_menu li {
+    padding: 0 15px;
+    list-style: none;
+    text-align: center;
+}
+
+.section_nav_menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #676767;
+    font-weight: bold;
+}
+
+.section_nav_menu a:hover {
     color: white;
 }
+
+.first::after{
+    content: "";
+    display: inline-block;
+    width: 30%;
+    height: 2px;
+    background-color: yellowgreen;
+    vertical-align: top;
+}
+
+/* Main - Section-main-Recently */
+.wrapper_section {
+    margin-bottom: 20px;
+}
+.recently {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.poster {
+    width: calc(100% / 6 - 10px);
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.poster > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.poster > h5 {
+    padding: 10px 5px;
+    font-size: 11px;
+}
+.poster > p {
+    padding: 0 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 11px;
+    color: #676767;
+}
+
 
 /* Footer */
 footer {
@@ -151,6 +270,22 @@ footer {
 
 
 /* Media */
+@media screen and (max-width: 992px) {
+
+    .poster {
+        width: calc(100% / 4 - 10px);
+    }
+}
+
+@media screen and (max-width: 850px) and (min-width: 768px) {
+
+    /* Main - Section - Recently */
+    .poster {
+        width: calc(100% / 2 - 10px);
+    }
+}
+
+
 @media screen and (max-width: 767px) {
     
     aside {
@@ -174,8 +309,9 @@ footer {
         text-align: center;
     }
 
-    .icon_nav i {
-        margin: 5px 0;
+    .icon_nav img {
+        height: 22px;
+        margin: 2px 0;
         color: white;
     }
 
@@ -185,6 +321,27 @@ footer {
 
     .section_top {
         width: calc(100% - 50px);
+    }
+
+    /* Main - Section - Recently */
+    .poster {
+        width: calc(100% / 2 - 10px);
+    }
+
+    .poster > h5 {
+        font-size: 12px;
+    }
+    .poster > p {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-height: 500px) {
+    
+    .menu {
+        height: 25vh;
+        overflow-y: auto;    
     }
 
 }
