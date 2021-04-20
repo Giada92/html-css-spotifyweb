@@ -42,11 +42,6 @@ aside {
     padding-left: 15px;
 }
 
-.user {
-    height: 80px;
-    /* background-color: salmon; */
-}
-
 .logo {
     height: 90px;
     line-height: 90px;
@@ -54,6 +49,10 @@ aside {
 }
 .logo > img {
     vertical-align: middle;
+}
+
+.navbar {
+    height: 110px;
 }
 
 .menu {
@@ -100,7 +99,7 @@ h5 {
     font-size: 30px;
 }
 
-.icon_nav {
+.wrapper_icon {
     display: none;
 }
 
@@ -111,38 +110,43 @@ h5 {
 }
 
 .install {
-    height: 34px;
-    line-height: 34px;
-    padding: 5px 0;
+    height: 40px;
+    line-height: 40px;
+    color: #676767;
     border-bottom: 1px solid #676767;
-    font-weight: bold;
-    font-size: 12px;
+}
+
+.install > img {
+    height: 20px;
+    vertical-align: middle;
     color: #676767;
 }
 
 .install > span {
     vertical-align: middle;
-}
-
-.install > img {
-    height: 20px;
+    font-weight: bold;
+    font-size: 11px;
 }
 
 .profile {
-    margin-top: 10px;
-    color: white;
+    height: 40px;
+    line-height: 40px;
+    color: #676767;
 }
 
-.profile img {
-    height: 20px;
-    background-color: #808080;
+.profile > img {
+    height: 25px;
+    vertical-align: middle;
+    background-color: #676767;
     border-radius: 50%;
 }
 
-.profile span {
-    font-size: 12px;
+.profile > span {
+    margin-left: 5px;
+    vertical-align: middle;
     font-weight: bold;
-    margin-left: 10px;
+    font-size: 12px;
+    color: white;
 }
 
 /* Main - section */
@@ -178,7 +182,8 @@ section {
     transition: all 0.2s;
 }
 .section_top > a:hover {
-    transform: scale(2, 3);
+    padding: 15px 35px;
+    font-size: 14px;
 }
 
 /* Main - Section-main-nav */
@@ -249,14 +254,23 @@ section {
 
 .poster > h5 {
     padding: 10px 5px;
-    font-size: 11px;
+    font-size: 12px;
 }
-.poster > p {
+
+p {
     padding: 0 5px;
     margin-bottom: 10px;
     font-weight: bold;
-    font-size: 11px;
+    font-size: 12px;
     color: #676767;
+}
+
+.title_h2 {
+    margin-bottom: 10px;
+}
+
+.arround {
+    border-radius: 50%;
 }
 
 
@@ -266,6 +280,12 @@ footer {
     position: relative;
     z-index: 2;
     background-color: #282828;
+    color: white;
+}
+
+.wrapper_footer {
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -303,16 +323,28 @@ footer {
         display: none;
     }
 
-    .icon_nav {
-        display: block;
+    .wrapper_icon {
+        height: calc(100vh - 90px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding: 10px 5px;
         text-align: center;
     }
 
-    .icon_nav img {
+    .wrapper_icon img {
         height: 22px;
         margin: 2px 0;
         color: white;
+    }
+
+    .icon_nav_bottom img:first-child {
+        height: 20px;
+    }
+
+    .icon_nav_bottom img:not(:first-child) {
+        background-color: #676767;
+        border-radius: 50%;
     }
 
     section {
@@ -340,7 +372,7 @@ footer {
 @media screen and (max-height: 500px) {
     
     .menu {
-        height: 25vh;
+        height: calc(100vh - 280px);
         overflow-y: auto;    
     }
 
