@@ -56,8 +56,10 @@ aside {
 }
 
 .nav {
-    height: 100%;
-    /* margin-left: 15px; */
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .logo {
@@ -69,18 +71,13 @@ aside {
     vertical-align: middle;
 }
 
-.navbar {
-    height: 110px;
-}
-
 .menu {
-    height: 100%;
-    list-style: none;    
+    list-style: none;
+    overflow-y: auto;    
 }
 .menu li {
     line-height: 35px;
     color: #676767;
-    overflow-y: auto;
 }
 .menu a {
     text-decoration: none;
@@ -115,7 +112,11 @@ aside {
 .playlist {
     margin-top: 10px;
     margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 }
+
 
 .playlist .menu li:first-child {
     border: none;
@@ -137,6 +138,7 @@ h5 {
     height: 80px;
     margin: 0 15px;
     display: inline-block;
+    overflow: hidden;
 }
 
 .install {
@@ -447,7 +449,7 @@ footer {
 .player:hover  {
     background-color: yellowgreen;
 }
-.time_bar:hover .fa-dot-circle {
+.player:hover .fa-dot-circle {
    visibility: visible;
 }
 
@@ -646,13 +648,4 @@ footer {
     .bar_vol {
         width: 20%;
     }
-}
-
-@media screen and (max-height: 600px) {
-    
-    .playlist .menu {
-        height: calc(100vh - 280px);
-        overflow-y: auto;    
-    }
-
 }
